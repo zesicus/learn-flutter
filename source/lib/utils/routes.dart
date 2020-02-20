@@ -4,6 +4,7 @@ import '../navigator/pages/named_pass_value_page.dart';
 import '../navigator/pages/named_route_page.dart';
 import '../navigator/pages/replaced_route_page.dart';
 import '../navigator/pages/root_route_page.dart';
+import '../navigator/pages/pop_feedback_page.dart';
 import '../network/pages/network_http_page.dart';
 import '../network/pages/network_json_page.dart';
 import '../widgets/origin/pages/widget_button_page.dart';
@@ -23,6 +24,8 @@ import '../widgets/origin/pages/widget_switch_page.dart';
 import '../widgets/origin/pages/widget_text_field_page.dart';
 import '../widgets/origin/pages/widget_text_page.dart';
 import '../widgets/origin/pages/widget_wrap_page.dart';
+import '../widgets/origin/pages/widget_single_child_page.dart';
+
 
 // MARK: - 路由
 final routes = {
@@ -45,11 +48,13 @@ final routes = {
   '/widget_switch': (context) => WidgetSwitchPage(),
   '/widget_date': (context) => WidgetDatePage(),
   '/widget_dialog': (context) => WidgetDialogPage(),
+  '/widget_scroll': (context) => WidgetSingleChildPage(),
   // 导航
   '/navigator_named': (context) => NamedRoutePage(),
   '/navigator_pass_value': (context, {arguments}) => NamedPassValuePage(argument: arguments),
   '/navigator_replaced': (context) => ReplacedRoutePage(),
   '/navigator_root': (context) => RooteRoutePage(),
+  '/navigator_pop': (context) => PopFeedbackPage(),
   // 网络
   '/network_json': (context) => NetworkJsonPage(),
   '/network_http': (context) => NetworkHttpPage(),

@@ -118,6 +118,9 @@ class _TabWidgetsPageState extends State<TabWidgetsPage> {
       case "Dialog":
         Navigator.pushNamed(context, "/widget_dialog");
         break;
+      case "Scroll View":
+        Navigator.pushNamed(context, "/widget_scroll");
+        break;
       default:
         print("Others");
         break;

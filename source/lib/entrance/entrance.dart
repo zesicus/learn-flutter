@@ -40,7 +40,7 @@ class _EntranceState extends State<Entrance> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.code),
-            title: tabText("导航"),
+            title: tabText("路由"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.wifi),

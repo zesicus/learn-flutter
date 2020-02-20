@@ -66,7 +66,8 @@ class _TabNavigatorPageState extends State<TabNavigatorPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => NormalPassValuePage(passValue: result == null ? "" : result),
+                  builder: (context) => NormalPassValuePage(
+                      passValue: result == null ? "" : result),
                 ),
               );
               break;
@@ -81,8 +82,29 @@ class _TabNavigatorPageState extends State<TabNavigatorPage> {
             case '替换路由':
               Navigator.pushNamed(context, "/navigator_replaced");
               break;
-            case '返回根路由':
+            case '移除路由':
               Navigator.pushNamed(context, "/navigator_root");
+              break;
+            case '回传路由':
+              Navigator.pushNamed(context, "/navigator_pop").then((onValue) {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text("返回值"),
+                      content: Text("$onValue"),
+                      actions: <Widget>[
+                        FlatButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text("确定"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              });
               break;
             default:
               print("Others");

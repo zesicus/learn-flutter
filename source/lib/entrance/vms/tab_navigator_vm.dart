@@ -11,7 +11,8 @@ class TabNavigatorVM {
     TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("命名路由")),
     TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("命名传值路由")),
     TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("替换路由")),
-    TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("返回根路由")),
+    TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("移除路由")),
+    TabWidgetsListModel(Icon(Icons.settings_ethernet), Text("回传路由")),
   ];
 
 }

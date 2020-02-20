@@ -21,6 +21,7 @@ class TabWidgetsVM {
       TabWidgetsListModel(Icon(Icons.g_translate), Text("Switch")),
       TabWidgetsListModel(Icon(Icons.calendar_today), Text("Date")),
       TabWidgetsListModel(Icon(Icons.fiber_smart_record), Text("Dialog")),
+      TabWidgetsListModel(Icon(Icons.camera_roll), Text("Scroll View")),
     ]),
   ];
 }
