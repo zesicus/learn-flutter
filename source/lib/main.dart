@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'utils/routes.dart';
 
@@ -8,6 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Android 状态栏透明
+    if (Platform.isAndroid) {
+      var style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemChrome.setSystemUIOverlayStyle(style);
+    }
+
     return MaterialApp(
       title: 'Learn Flutter',
       theme: ThemeData(
