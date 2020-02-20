@@ -25,6 +25,8 @@ class _EntranceState extends State<Entrance> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Learn Flutter"),
+        automaticallyImplyLeading: false, // 把 leading 的空间留给 title
+        flexibleSpace: Image.asset('res/images/sea_navi.jpg', fit: BoxFit.cover,),
       ),
       body: pages[currentTabIndex],
       bottomNavigationBar: BottomNavigationBar(
