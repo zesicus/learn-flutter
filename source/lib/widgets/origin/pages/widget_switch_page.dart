@@ -26,6 +26,18 @@ class _WidgetSwitchPageState extends State<WidgetSwitchPage> {
               },
             ),
           ),
+          Divider(),
+          SwitchListTile(
+            value: vm.flag,
+            onChanged: (value) {
+              setState(() {
+                vm.flag = value;
+              });
+            },
+            secondary: Icon(Icons.flag),
+            title: Text("标题"),
+            subtitle: Text("实现方式"),
+          ),
         ],
       ),
     );
