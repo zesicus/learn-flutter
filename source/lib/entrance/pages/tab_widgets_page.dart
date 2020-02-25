@@ -41,12 +41,17 @@ class _TabWidgetsPageState extends State<TabWidgetsPage> {
                 Align(
                   alignment: Alignment(-1.05, 0),
                   child: model.isExpanded
-                      ? Icon(Icons.arrow_drop_down, size: 30, color: Theme.of(context).accentColor)
-                      : Icon(Icons.arrow_right, size: 30, color: Color(0xff555555)),
+                      ? Icon(Icons.arrow_drop_down,
+                          size: 30, color: Theme.of(context).accentColor)
+                      : Icon(Icons.arrow_right,
+                          size: 30, color: Color(0xff555555)),
                 ),
                 Align(
                   alignment: Alignment(-0.75, 0),
-                  child: model.isExpanded ? headerHighlightedText(model.title, Theme.of(context).accentColor) : headerText(model.title),
+                  child: model.isExpanded
+                      ? headerHighlightedText(
+                          model.title, Theme.of(context).accentColor)
+                      : headerText(model.title),
                 ),
               ],
             ),
@@ -120,6 +125,18 @@ class _TabWidgetsPageState extends State<TabWidgetsPage> {
         break;
       case "Scroll View":
         Navigator.pushNamed(context, "/widget_scroll");
+        break;
+      case "综合表单":
+        Navigator.pushNamed(context, "/widget_custom_scroll");
+        break;
+      case '折叠填充':
+        Navigator.pushNamed(context, "/widget_sliver_bar");
+        break;
+      case '缩进格':
+        Navigator.pushNamed(context, "/widget_persistent");
+        break;
+      case '嵌套连结':
+        Navigator.pushNamed(context, "/widget_nested");
         break;
       default:
         print("Others");

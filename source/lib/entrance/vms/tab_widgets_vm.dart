@@ -3,7 +3,7 @@ import '../models/tab_widgets_model.dart';
 
 class TabWidgetsVM {
   List<TabListModel> listSource = [
-    TabListModel("原生控件", true, [
+    TabListModel("基础控件", true, [
       TabWidgetsListModel(Icon(Icons.crop_din), Text("Container")),
       TabWidgetsListModel(Icon(Icons.font_download), Text("Text")),
       TabWidgetsListModel(Icon(Icons.view_column), Text("Row & Column")),
@@ -22,6 +22,12 @@ class TabWidgetsVM {
       TabWidgetsListModel(Icon(Icons.calendar_today), Text("Date")),
       TabWidgetsListModel(Icon(Icons.fiber_smart_record), Text("Dialog")),
       TabWidgetsListModel(Icon(Icons.camera_roll), Text("Scroll View")),
+    ]),
+    TabListModel("进阶控件", true, [
+      TabWidgetsListModel(Icon(Icons.apps), Text("综合表单")),
+      TabWidgetsListModel(Icon(Icons.calendar_view_day), Text("折叠填充")),
+      TabWidgetsListModel(Icon(Icons.unfold_more), Text("缩进格")),
+      TabWidgetsListModel(Icon(Icons.swap_calls), Text("嵌套连结")),
     ]),
   ];
 }

@@ -25,12 +25,16 @@ import '../widgets/origin/pages/widget_text_field_page.dart';
 import '../widgets/origin/pages/widget_text_page.dart';
 import '../widgets/origin/pages/widget_wrap_page.dart';
 import '../widgets/origin/pages/widget_single_child_page.dart';
+import '../widgets/customize/pages/widget_complex_form_page.dart';
+import '../widgets/customize/pages/widget_fold_app_bar_page.dart';
+import '../widgets/customize/pages/widget_persistent_page.dart';
+import '../widgets/customize/pages/widget_nested_scroll_page.dart';
 
 
 // MARK: - 路由
 final routes = {
   '/': (context, {arguments = 0}) => Entrance(currentTabIndex: arguments),
-  // 控件
+  // 控件 - 基础
   '/widget_container': (context) => WidgetContainerPage(),
   '/widget_text': (context) => WidgetTextPage(),
   '/widget_layout': (context) => WidgetLayoutPage(),
@@ -49,6 +53,11 @@ final routes = {
   '/widget_date': (context) => WidgetDatePage(),
   '/widget_dialog': (context) => WidgetDialogPage(),
   '/widget_scroll': (context) => WidgetSingleChildPage(),
+  // 控件 - 进阶
+  '/widget_custom_scroll': (context) => WidgetComplexFormPage(),
+  '/widget_sliver_bar': (context) => WidgetFoldAppBarPage(),
+  '/widget_persistent': (context) => WidgetPersistentPage(),
+  '/widget_nested': (context) => WidgetNestedScrollPage(),
   // 导航
   '/navigator_named': (context) => NamedRoutePage(),
   '/navigator_pass_value': (context, {arguments}) => NamedPassValuePage(argument: arguments),
