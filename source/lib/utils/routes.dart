@@ -29,7 +29,12 @@ import '../widgets/customize/pages/widget_complex_form_page.dart';
 import '../widgets/customize/pages/widget_fold_app_bar_page.dart';
 import '../widgets/customize/pages/widget_persistent_page.dart';
 import '../widgets/customize/pages/widget_nested_scroll_page.dart';
-
+import '../widgets/customize/pages/widget_gestures_page.dart';
+import '../widgets/customize/pages/widget_animation_page.dart';
+import '../widgets/customize/pages/widget_tween_page.dart';
+import '../widgets/customize/pages/widget_animation_widget_page.dart';
+import '../widgets/customize/pages/widget_staggered_page.dart';
+import '../widgets/customize/pages/widget_hero_page.dart';
 
 // MARK: - 路由
 final routes = {
@@ -58,6 +63,13 @@ final routes = {
   '/widget_sliver_bar': (context) => WidgetFoldAppBarPage(),
   '/widget_persistent': (context) => WidgetPersistentPage(),
   '/widget_nested': (context) => WidgetNestedScrollPage(),
+  '/widget_gesture': (context) => WidgetGesturesPage(),
+  // 控件 - 动画
+  '/widget_animation': (context) => WidgetAnimationpage(),
+  '/widget_tween': (context) => WidgetTweenPage(),
+  '/widget_aw': (context) => WidgetAnimationWidgetpage(),
+  '/widget_staggered': (context) => WidgetStaggeredpage(),
+  '/widget_hero': (context) => WidgetHeroPage(),
   // 导航
   '/navigator_named': (context) => NamedRoutePage(),
   '/navigator_pass_value': (context, {arguments}) => NamedPassValuePage(argument: arguments),

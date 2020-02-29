@@ -138,6 +138,24 @@ class _TabWidgetsPageState extends State<TabWidgetsPage> {
       case '嵌套连结':
         Navigator.pushNamed(context, "/widget_nested");
         break;
+      case '手势':
+        Navigator.pushNamed(context, "/widget_gesture");
+        break;
+      case 'Animation Controller':
+        Navigator.pushNamed(context, "/widget_animation");
+        break;
+      case 'Tween':
+        Navigator.pushNamed(context, "/widget_tween");
+        break;
+      case 'Animation Widget':
+        Navigator.pushNamed(context, "/widget_aw");
+        break;
+      case 'Staggered Widget':
+        Navigator.pushNamed(context, "/widget_staggered");
+        break;
+      case 'Hero':
+        Navigator.pushNamed(context, "/widget_hero");
+        break;
       default:
         print("Others");
         break;

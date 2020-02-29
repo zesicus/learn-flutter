@@ -10,7 +10,7 @@ class WidgetDialogPage extends StatefulWidget {
 }
 
 class _WidgetDialogPageState extends State<WidgetDialogPage> {
-  // 提示框
+  /// 提示框
   _alertDialog() async {
     final result = await showDialog(
       context: context,
@@ -38,7 +38,7 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
     print(result.toString());
   }
 
-  // 菜单弹窗
+  /// 菜单弹窗
   _simpleDialog() async {
     final result = await showDialog(
       context: context,
@@ -71,7 +71,7 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
     print(result.toString());
   }
 
-  // 菜单滑窗
+  /// 菜单滑窗
   _bottomSheet() async {
     final result = await showModalBottomSheet(
       context: context,
@@ -109,7 +109,7 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
     print(result.toString());
   }
 
-  // 自定义弹窗
+  /// 自定义弹窗
   _customDialog() async {
     final result = await showDialog(
       context: context,
@@ -123,7 +123,7 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
     print(result.toString());
   }
 
-  // 自定义加载
+  /// 自定义加载
   _customLoading() {
     showDialog(
       context: context,
@@ -131,14 +131,90 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
         return CustomLoading();
       },
     );
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       Navigator.pop(context);
     });
   }
 
+  /// 动态数据弹窗
+  _showStateDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => StatefulBuilder(
+        builder: (context, dialogStateState) => SimpleDialog(
+          title: Text("修改值"),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text("当前值：$_count"),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("增加"),
+                    onPressed: () {
+                      dialogStateState(() => _count++);
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("减少"),
+                    onPressed: () => dialogStateState(() => _count--),
+                  ),
+                  RaisedButton(
+                    child: Text("知了"),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// SnackBar
+  _snackBar(BuildContext context) {
+    _scaffoldkey.currentState.showSnackBar(
+      SnackBar(
+        content: Text("我是 Snack Bar"),
+        action: SnackBarAction(label: '按钮', onPressed: () {}),
+        duration: Duration(milliseconds: 2000),
+      ),
+    );
+  }
+
+  /// 关于
+  _about(BuildContext context) {
+    showAboutDialog(
+      context: context,
+      applicationName: 'Learn Flutter',
+      applicationVersion: '0.0.1',
+      applicationLegalese: 'Copyright © 2020 琳琅与纷飞',
+      applicationIcon: Image.asset('res/images/sword.png',
+          width: 60, height: 60, fit: BoxFit.contain),
+      children: <Widget>[
+        Text('知之为知之，不知为不知，是知也。'),
+        Text('有朋自远方来，不亦乐乎？'),
+      ],
+    );
+  }
+
+  final _scaffoldkey = GlobalKey<ScaffoldState>();
+  int _count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       appBar: AppBar(
         title: Text("Dialog"),
       ),
@@ -167,6 +243,27 @@ class _WidgetDialogPageState extends State<WidgetDialogPage> {
           ListTile(
             title: Text("自定义加载"),
             onTap: _customLoading,
+          ),
+          Divider(),
+          ListTile(
+            title: Text("动态数据弹窗"),
+            onTap: () {
+              _showStateDialog(context);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("Snack Bar"),
+            onTap: () {
+              _snackBar(context);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("关于"),
+            onTap: () {
+              _about(context);
+            },
           ),
           Divider(),
         ],

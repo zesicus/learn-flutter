@@ -28,6 +28,14 @@ class TabWidgetsVM {
       TabWidgetsListModel(Icon(Icons.calendar_view_day), Text("折叠填充")),
       TabWidgetsListModel(Icon(Icons.unfold_more), Text("缩进格")),
       TabWidgetsListModel(Icon(Icons.swap_calls), Text("嵌套连结")),
+      TabWidgetsListModel(Icon(Icons.touch_app), Text("手势")),
+    ]),
+    TabListModel("动画", true, [
+      TabWidgetsListModel(Icon(Icons.ac_unit), Text("Animation Controller")),
+      TabWidgetsListModel(Icon(Icons.ac_unit), Text("Tween")),
+      TabWidgetsListModel(Icon(Icons.ac_unit), Text("Animation Widget")),
+      TabWidgetsListModel(Icon(Icons.ac_unit), Text("Staggered Widget")),
+      TabWidgetsListModel(Icon(Icons.ac_unit), Text("Hero")),
     ]),
   ];
 }
