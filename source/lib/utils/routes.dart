@@ -70,7 +70,7 @@ final routes = {
   '/widget_aw': (context) => WidgetAnimationWidgetpage(),
   '/widget_staggered': (context) => WidgetStaggeredpage(),
   '/widget_hero': (context) => WidgetHeroPage(),
-  // 导航
+  // 路由
   '/navigator_named': (context) => NamedRoutePage(),
   '/navigator_pass_value': (context, {arguments}) => NamedPassValuePage(argument: arguments),
   '/navigator_replaced': (context) => ReplacedRoutePage(),
