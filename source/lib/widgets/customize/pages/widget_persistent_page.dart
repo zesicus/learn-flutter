@@ -12,7 +12,7 @@ class _WidgetPersistentPageState extends State<WidgetPersistentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("拉伸头部"),
+        title: Text("缩进格"),
       ),
       body: CustomScrollView(
         slivers: <Widget>[
