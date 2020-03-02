@@ -61,6 +61,9 @@ class TabVM {
       TabWidgetsListModel(Icon(Icons.http), Text("Http")),
       TabWidgetsListModel(Icon(Icons.data_usage), Text("Dio")),
     ]),
+    TabListModel("流", false, [
+      TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream")),
+    ]),
   ];
 
   /// 列表数据源
@@ -301,6 +304,9 @@ class TabVM {
         break;
       case "Json":
         Navigator.pushNamed(context, "/network_json");
+        break;
+      case "Stream":
+        Navigator.pushNamed(context, "/more_stream");
         break;
       default:
         print("Others");

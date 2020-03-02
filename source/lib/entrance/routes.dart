@@ -35,11 +35,12 @@ import '../widgets/customize/pages/widget_tween_page.dart';
 import '../widgets/customize/pages/widget_animation_widget_page.dart';
 import '../widgets/customize/pages/widget_staggered_page.dart';
 import '../widgets/customize/pages/widget_hero_page.dart';
+import '../stream/pages/stream_page.dart';
 
 // MARK: - 路由
 final routes = {
   '/': (context, {arguments = 0}) => Entrance(currentTabIndex: arguments),
-  // 控件 - 基础
+  // 基础
   '/widget_container': (context) => WidgetContainerPage(),
   '/widget_text': (context) => WidgetTextPage(),
   '/widget_layout': (context) => WidgetLayoutPage(),
@@ -58,13 +59,13 @@ final routes = {
   '/widget_date': (context) => WidgetDatePage(),
   '/widget_dialog': (context) => WidgetDialogPage(),
   '/widget_scroll': (context) => WidgetSingleChildPage(),
-  // 控件 - 进阶
+  // 进阶
   '/widget_custom_scroll': (context) => WidgetComplexFormPage(),
   '/widget_sliver_bar': (context) => WidgetFoldAppBarPage(),
   '/widget_persistent': (context) => WidgetPersistentPage(),
   '/widget_nested': (context) => WidgetNestedScrollPage(),
   '/widget_gesture': (context) => WidgetGesturesPage(),
-  // 控件 - 动画
+  // 动画
   '/widget_animation': (context) => WidgetAnimationpage(),
   '/widget_tween': (context) => WidgetTweenPage(),
   '/widget_aw': (context) => WidgetAnimationWidgetpage(),
@@ -79,6 +80,8 @@ final routes = {
   // 网络
   '/network_json': (context) => NetworkJsonPage(),
   '/network_http': (context) => NetworkHttpPage(),
+  // 流
+  '/more_stream': (context) => StreamPage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {

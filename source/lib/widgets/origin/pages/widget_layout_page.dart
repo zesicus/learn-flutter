@@ -4,15 +4,18 @@ class WidgetLayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: Text("Layout"),
           bottom: TabBar(
-            isScrollable: false,
+            isScrollable: true,
             tabs: <Widget>[
               Tab(text: "Padding"),
               Tab(text: "Expanded"),
+              Tab(
+                text: "Flexible",
+              ),
               Tab(text: "AspectRadio"),
             ],
           ),
@@ -35,18 +38,48 @@ class WidgetLayoutPage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    child: Text('颜色', style: TextStyle(color: Colors.white)),
                     decoration: BoxDecoration(color: Colors.red),
                   ),
                 ),
                 Expanded(
                   flex: 2,
                   child: Container(
+                    // child: Text('颜色', style: TextStyle(color: Colors.white)),
                     decoration: BoxDecoration(color: Colors.yellow),
                   ),
                 ),
                 Expanded(
                   flex: 3,
                   child: Container(
+                    child: Text('颜色', style: TextStyle(color: Colors.white)),
+                    decoration: BoxDecoration(color: Colors.green),
+                  ),
+                ),
+              ],
+            ),
+
+            // Flexible
+            Row(
+              children: <Widget>[
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    child: Text('颜色', style: TextStyle(color: Colors.white)),
+                    decoration: BoxDecoration(color: Colors.red),
+                  ),
+                ),
+                Flexible(
+                  flex: 2,
+                  child: Container(
+                    child: Text('颜色', style: TextStyle(color: Colors.white)),
+                    decoration: BoxDecoration(color: Colors.yellow),
+                  ),
+                ),
+                Flexible(
+                  flex: 3,
+                  child: Container(
+                    // child: Text('颜色', style: TextStyle(color: Colors.white)),
                     decoration: BoxDecoration(color: Colors.green),
                   ),
                 ),
@@ -71,4 +104,3 @@ class WidgetLayoutPage extends StatelessWidget {
     );
   }
 }
-

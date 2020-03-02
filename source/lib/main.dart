@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'utils/routes.dart';
+import 'entrance/routes.dart';
 
 void main() => runApp(MyApp());
 
