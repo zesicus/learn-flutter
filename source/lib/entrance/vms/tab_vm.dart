@@ -63,6 +63,7 @@ class TabVM {
     ]),
     TabListModel("流", false, [
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream")),
+      TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream Builder")),
     ]),
   ];
 
@@ -307,6 +308,9 @@ class TabVM {
         break;
       case "Stream":
         Navigator.pushNamed(context, "/more_stream");
+        break;
+      case "Stream Builder":
+        Navigator.pushNamed(context, "/more_stream_builder");
         break;
       default:
         print("Others");

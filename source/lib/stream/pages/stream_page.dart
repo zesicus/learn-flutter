@@ -14,21 +14,27 @@ class _StreamPageState extends State<StreamPage> {
   String text1 = '广播区域 1\n';
   String text2 = '广播区域 2\n';
   final vm = StreamVM();
+  var _sub;
+  var _sub1;
+  var _sub2;
 
   _StreamPageState() {
     Future.delayed(Duration(seconds: 2), () {
-      vm.streamController.stream.listen((data) {
+      _sub = vm.streamController.stream
+      ..where((value) => value is String) // 只接收 String 类型的数据
+      ..take(50) // 只接收 50 个数据
+      ..listen((data) {
         setState(() {
           text += data;
         });
       });
     });
-    vm.bs.listen((data) {
+    _sub1 = vm.bs.listen((data) {
       setState(() {
         text1 += data + '\n';
       });
     });
-    vm.bs.listen((data) {
+    _sub2 = vm.bs.listen((data) {
       setState(() {
         text2 += data + '\n';
       });
@@ -39,6 +45,9 @@ class _StreamPageState extends State<StreamPage> {
   void dispose() {
     vm.streamController.close();
     vm.bsController.close();
+    _sub.cancel();
+    _sub1.cancel();
+    _sub2.cancel();
     super.dispose();
   }
 

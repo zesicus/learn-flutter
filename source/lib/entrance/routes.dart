@@ -36,6 +36,7 @@ import '../widgets/customize/pages/widget_animation_widget_page.dart';
 import '../widgets/customize/pages/widget_staggered_page.dart';
 import '../widgets/customize/pages/widget_hero_page.dart';
 import '../stream/pages/stream_page.dart';
+import '../stream/pages/stream_builder_page.dart';
 
 // MARK: - 路由
 final routes = {
@@ -82,6 +83,7 @@ final routes = {
   '/network_http': (context) => NetworkHttpPage(),
   // 流
   '/more_stream': (context) => StreamPage(),
+  '/more_stream_builder': (context) => StreamBuilderPage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {
