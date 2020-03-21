@@ -9,7 +9,7 @@ class StreamVM {
   Stream bs;
   Sink bSink;
 
-  var timer;
+  Timer timer;
   StreamVM() {
     bs = bsController.stream.asBroadcastStream();
     sink = streamController.sink
@@ -17,9 +17,9 @@ class StreamVM {
     ..add('abc\n');
     bSink = bsController.sink
     ..add('我是广播');
-    timer = Timer.periodic(Duration(seconds: 3), (_) {
-      streamController.sink.add('循环打印\n另一条信息\n');
-      bsController.sink.add('广播打印');
+    timer = Timer.periodic(Duration(seconds: 2), (_) {
+      sink.add('循环打印\n另一条信息\n');
+      bSink.add('广播打印');
     });
   }
 }

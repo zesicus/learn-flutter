@@ -14,21 +14,24 @@ class _StreamPageState extends State<StreamPage> {
   String text1 = '广播区域 1\n';
   String text2 = '广播区域 2\n';
   final vm = StreamVM();
-  var _sub;
-  var _sub1;
-  var _sub2;
+  StreamSubscription<dynamic> _sub;
+  StreamSubscription<dynamic> _sub1;
+  StreamSubscription<dynamic> _sub2;
 
   _StreamPageState() {
+    // 单播
     Future.delayed(Duration(seconds: 2), () {
-      _sub = vm.streamController.stream
+      var stream = vm.streamController.stream
       ..where((value) => value is String) // 只接收 String 类型的数据
-      ..take(50) // 只接收 50 个数据
-      ..listen((data) {
+      ..take(50); // 只接收 50 个数据
+
+      _sub = stream.listen((data) {
         setState(() {
           text += data;
         });
       });
     });
+    // 广播
     _sub1 = vm.bs.listen((data) {
       setState(() {
         text1 += data + '\n';
@@ -43,6 +46,9 @@ class _StreamPageState extends State<StreamPage> {
 
   @override
   void dispose() {
+    vm.timer.cancel();
+    vm.sink.close();
+    vm.bSink.close();
     vm.streamController.close();
     vm.bsController.close();
     _sub.cancel();
