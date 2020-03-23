@@ -37,6 +37,7 @@ import '../widgets/customize/pages/widget_staggered_page.dart';
 import '../widgets/customize/pages/widget_hero_page.dart';
 import '../stream/pages/stream_page.dart';
 import '../stream/pages/stream_builder_page.dart';
+import '../widgets/customize/inherited/inherited_test_page.dart';
 
 // MARK: - 路由
 final routes = {
@@ -66,6 +67,7 @@ final routes = {
   '/widget_persistent': (context) => WidgetPersistentPage(),
   '/widget_nested': (context) => WidgetNestedScrollPage(),
   '/widget_gesture': (context) => WidgetGesturesPage(),
+  '/widget_inherited': (context) => InheritedTestPage(),
   // 动画
   '/widget_animation': (context) => WidgetAnimationpage(),
   '/widget_tween': (context) => WidgetTweenPage(),

@@ -35,6 +35,7 @@ class TabVM {
       TabWidgetsListModel(Icon(Icons.unfold_more), Text("缩进格")),
       TabWidgetsListModel(Icon(Icons.swap_calls), Text("嵌套连结")),
       TabWidgetsListModel(Icon(Icons.touch_app), Text("手势")),
+      TabWidgetsListModel(Icon(Icons.widgets), Text("Inherited Widget")),
     ]),
     TabListModel("动画", false, [
       TabWidgetsListModel(Icon(Icons.ac_unit), Text("Animation Controller")),
@@ -311,6 +312,9 @@ class TabVM {
         break;
       case "Stream Builder":
         Navigator.pushNamed(context, "/more_stream_builder");
+        break;
+      case "Inherited Widget":
+        Navigator.pushNamed(context, "/widget_inherited");
         break;
       default:
         print("Others");
