@@ -4,7 +4,7 @@ import 'package:learn_flutter/stream/bloc/scoped/support/bloc_provider.dart';
 class BLoCScopedUnderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of(context);
+    final bloc = BlocProvider.of(context).bLoC;
     return Scaffold(
       appBar: AppBar(title: Text('Scoped Under Page')),
       body: Center(

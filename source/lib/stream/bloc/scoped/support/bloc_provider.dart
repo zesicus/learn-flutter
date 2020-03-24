@@ -4,12 +4,14 @@ import 'count_bloc.dart';
 class BlocProvider extends InheritedWidget {
   final bLoC = CountBLoC();
 
-  static CountBLoC of(BuildContext context) {
-    return (context.dependOnInheritedWidgetOfExactType(aspect: BlocProvider) as BlocProvider).bLoC;
+  BlocProvider({Key key, Widget child}) : super(key: key, child: child);
+
+  static BlocProvider of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<BlocProvider>();
   }
 
   @override
-  bool updateShouldNotify( BlocProvider oldWidget) {
+  bool updateShouldNotify(BlocProvider oldWidget) {
     return true;
   }
 }
