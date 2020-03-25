@@ -66,7 +66,7 @@ class TabVM {
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream")),
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream Builder")),
       TabWidgetsListModel(
-          Icon(Icons.flash_on), Text("BLoC (Inherited Scoped)")),
+          Icon(Icons.flash_on), Text("BLoC (Inherited Scoped / RxDart)")),
     ]),
   ];
 
@@ -318,7 +318,7 @@ class TabVM {
       case "Inherited Widget":
         Navigator.pushNamed(context, "/widget_inherited");
         break;
-      case "BLoC (Inherited Scoped)":
+      case "BLoC (Inherited Scoped / RxDart)":
         Navigator.pushNamed(context, "/more_bloc_scoped");
         break;
       default:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/stream/bloc/scoped/support/bloc_provider.dart';
+import 'package:learn_flutter/stream/bloc/support/bloc_provider.dart';
 
 class BLoCScopedUnderPage extends StatelessWidget {
   @override

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:learn_flutter/stream/bloc/scoped/support/bloc_provider.dart';
+import 'package:learn_flutter/stream/bloc/support/bloc_provider.dart';
 import 'entrance/routes.dart';
 
 void main() => runApp(MyApp());
