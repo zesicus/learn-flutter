@@ -1,6 +1,7 @@
 import 'dart:async';
+import 'package:learn_flutter/stream/bloc/support/base_bloc_provider.dart';
 
-class CountBLoC {
+class CountBLoC extends BaseBloC {
   int _count = 0;
   StreamController<int> _countController = StreamController<int>.broadcast();
   Stream<int> get stream => _countController.stream;

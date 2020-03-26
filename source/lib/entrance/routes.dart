@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/stream/bloc/scoped/pages/bloc_scoped_top_page.dart';
+import 'package:learn_flutter/stream/bloc/base_mode/pages/bloc_base_top_page.dart';
+import 'package:learn_flutter/stream/bloc/scoped_mode/pages/bloc_scoped_top_page.dart';
 import '../entrance/entrance.dart';
 import '../navigator/pages/named_pass_value_page.dart';
 import '../navigator/pages/named_route_page.dart';
@@ -88,6 +89,7 @@ final routes = {
   '/more_stream': (context) => StreamPage(),
   '/more_stream_builder': (context) => StreamBuilderPage(),
   '/more_bloc_scoped': (context) => BLoCScopedTopPage(),
+  '/more_bloc_based': (context) => BloCBaseTopPage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {

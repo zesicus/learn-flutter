@@ -1,6 +1,7 @@
+import 'package:learn_flutter/stream/bloc/support/base_bloc_provider.dart';
 import 'package:rxdart/rxdart.dart';
 
-class  CountBLoCRx {
+class  CountBLoCRx extends BaseBloC {
   int _count = 0;
   var _subject = BehaviorSubject<int>();
   Stream<int> get stream => _subject.stream;
