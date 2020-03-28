@@ -26,7 +26,7 @@ class BlocBaseTopPageContent extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(15.0),
             child: Text(
-                "这是另一种思路，使用 Stateful Widget 去写 BLoC Provider，使用 dispose() 在页面结束的情况下同步释放 Stream，所以和 scoped 相比，这种方法要更加聪明一些，页面只需要专注于显示就好了。",
+                "这是另一种思路，使用 Stateful Widget 去写 BLoC Provider，使用 dispose() 在页面结束的情况下同步释放 Stream，所以和 scoped 相比，这种方法更符合单一职责原则。",
                 style: TextStyle(fontSize: 17)),
           ),
           Center(
