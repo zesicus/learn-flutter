@@ -65,9 +65,9 @@ class TabVM {
     TabListModel("流", false, [
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream")),
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Stream Builder")),
-      TabWidgetsListModel(
-          Icon(Icons.flash_on), Text("BLoC (Scoped / RxDart)")),
+      TabWidgetsListModel(Icon(Icons.flash_on), Text("BLoC (Scoped / RxDart)")),
       TabWidgetsListModel(Icon(Icons.flash_on), Text("BLoC (Based)")),
+      TabWidgetsListModel(Icon(Icons.flash_on), Text("Provider")),
     ]),
   ];
 
@@ -324,6 +324,9 @@ class TabVM {
         break;
       case "BLoC (Based)":
         Navigator.pushNamed(context, "/more_bloc_based");
+        break;
+      case "Provider":
+        Navigator.pushNamed(context, "/more_provider");
         break;
       default:
         print("Others");

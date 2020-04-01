@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/stream/bloc/base_mode/pages/bloc_base_top_page.dart';
 import 'package:learn_flutter/stream/bloc/scoped_mode/pages/bloc_scoped_top_page.dart';
+import 'package:learn_flutter/stream/provider/pages/provider_page.dart';
 import '../entrance/entrance.dart';
 import '../navigator/pages/named_pass_value_page.dart';
 import '../navigator/pages/named_route_page.dart';
@@ -37,8 +38,8 @@ import '../widgets/customize/pages/widget_tween_page.dart';
 import '../widgets/customize/pages/widget_animation_widget_page.dart';
 import '../widgets/customize/pages/widget_staggered_page.dart';
 import '../widgets/customize/pages/widget_hero_page.dart';
-import '../stream/pages/stream_page.dart';
-import '../stream/pages/stream_builder_page.dart';
+import '../stream/normal/pages/stream_page.dart';
+import '../stream/normal/pages/stream_builder_page.dart';
 import '../widgets/customize/inherited/inherited_test_page.dart';
 
 // MARK: - 路由
@@ -90,6 +91,7 @@ final routes = {
   '/more_stream_builder': (context) => StreamBuilderPage(),
   '/more_bloc_scoped': (context) => BLoCScopedTopPage(),
   '/more_bloc_based': (context) => BloCBaseTopPage(),
+  '/more_provider': (context) => ProviderPage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {
