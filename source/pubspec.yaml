@@ -30,6 +30,7 @@ dependencies:
   tuple: ^1.0.3
   rxdart: ^0.23.1
   provider: ^4.0.4
+  permission_handler: ^5.0.0+hotfix.2
 
 dev_dependencies:
   flutter_test:

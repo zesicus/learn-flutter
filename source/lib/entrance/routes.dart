@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/storage/files/pages/storage_files_page.dart';
 import 'package:learn_flutter/stream/bloc/base_mode/pages/bloc_base_top_page.dart';
 import 'package:learn_flutter/stream/bloc/scoped_mode/pages/bloc_scoped_top_page.dart';
 import 'package:learn_flutter/stream/provider/pages/provider_page.dart';
@@ -92,6 +93,8 @@ final routes = {
   '/more_bloc_scoped': (context) => BLoCScopedTopPage(),
   '/more_bloc_based': (context) => BloCBaseTopPage(),
   '/more_provider': (context) => ProviderPage(),
+  // 数据持久化
+  '/more_file_io': (context) => StorageFilesPage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {

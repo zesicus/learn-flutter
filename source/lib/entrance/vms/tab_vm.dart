@@ -69,6 +69,11 @@ class TabVM {
       TabWidgetsListModel(Icon(Icons.flash_on), Text("BLoC (Based)")),
       TabWidgetsListModel(Icon(Icons.flash_on), Text("Provider")),
     ]),
+    TabListModel("数据持久化", false, [
+      TabWidgetsListModel(Icon(Icons.storage), Text("文件读写")),
+      TabWidgetsListModel(Icon(Icons.storage), Text("Shared Preferences")),
+      TabWidgetsListModel(Icon(Icons.storage), Text("数据库")),
+    ]),
   ];
 
   /// 列表数据源
@@ -327,6 +332,9 @@ class TabVM {
         break;
       case "Provider":
         Navigator.pushNamed(context, "/more_provider");
+        break;
+      case "文件读写":
+        Navigator.pushNamed(context, "/more_file_io");
         break;
       default:
         print("Others");
