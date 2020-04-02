@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../vms/storage_files_vm.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class StorageFilesPage extends StatefulWidget {
   @override
@@ -56,7 +57,19 @@ class _StorageFilesPageState extends State<StorageFilesPage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0),
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () async {
+                if (await vm.writeTextIntoFile()) {
+                  Fluttertoast.showToast(
+                    msg: '写入成功',
+                    backgroundColor: Colors.green,
+                  );
+                } else {
+                  Fluttertoast.showToast(
+                    msg: '写入失败',
+                    backgroundColor: Colors.red,
+                  );
+                }
+              },
               child: Text('写入文件信息'),
             ),
           ),
@@ -67,7 +80,17 @@ class _StorageFilesPageState extends State<StorageFilesPage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0),
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () async {
+                if (vm.fileContent != null) {
+                  await vm.readTextFromFile();
+                  setState(() {});
+                } else {
+                  Fluttertoast.showToast(
+                    msg: '文件不存在',
+                    backgroundColor: Colors.red,
+                  );
+                }
+              },
               child: Text('读取文件信息'),
             ),
           ),
