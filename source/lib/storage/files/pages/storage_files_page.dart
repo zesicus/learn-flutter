@@ -94,6 +94,10 @@ class _StorageFilesPageState extends State<StorageFilesPage> {
               child: Text('读取文件信息'),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Text("这里使用了两个库，1) path_provider 是用来提供目录路径的；2) permission_handler 是用来提示权限的；目前iOS 应该是不需要权限的，Android 测试机不带外置存储，所以最后一个外置存储和第二个库没有测试；demo 仍有 bug，仅学习使用。", style: TextStyle(color: Colors.blueGrey),),
+          ),
         ],
       ),
     );

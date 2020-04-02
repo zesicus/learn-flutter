@@ -336,6 +336,9 @@ class TabVM {
       case "文件读写":
         Navigator.pushNamed(context, "/more_file_io");
         break;
+      case "Shared Preferences":
+        Navigator.pushNamed(context, "/more_shared");
+        break;
       default:
         print("Others");
         break;
