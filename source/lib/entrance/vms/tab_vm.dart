@@ -339,6 +339,9 @@ class TabVM {
       case "Shared Preferences":
         Navigator.pushNamed(context, "/more_shared");
         break;
+      case "数据库":
+        Navigator.pushNamed(context, "/more_sqflite");
+        break;
       default:
         print("Others");
         break;
