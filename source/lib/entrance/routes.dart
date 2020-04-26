@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/async/compute/async_compute_page.dart';
+import 'package:learn_flutter/async/isolate/async_isolate_page.dart';
 import 'package:learn_flutter/storage/files/pages/storage_files_page.dart';
 import 'package:learn_flutter/storage/shared_preferences/shared_preferences_page.dart';
 import 'package:learn_flutter/storage/sqflite/sqflite_page.dart';
@@ -99,6 +101,9 @@ final routes = {
   '/more_file_io': (context) => StorageFilesPage(),
   '/more_shared': (context) => SharedPreferencesPage(),
   '/more_sqflite': (context) => SqflitePage(),
+  // 协程
+  '/more_compute': (context) => AsyncComputePage(),
+  '/more_isolate': (context) => AsyncIsolatePage(),
 };
 
 final RouteFactory onGenerateRoute = (RouteSettings settings) {

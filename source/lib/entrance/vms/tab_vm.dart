@@ -74,6 +74,10 @@ class TabVM {
       TabWidgetsListModel(Icon(Icons.storage), Text("Shared Preferences")),
       TabWidgetsListModel(Icon(Icons.storage), Text("数据库")),
     ]),
+    TabListModel("协程", false, [
+      TabWidgetsListModel(Icon(Icons.settings), Text("compute")),
+      TabWidgetsListModel(Icon(Icons.settings), Text("isolate")),
+    ]),
   ];
 
   /// 列表数据源
@@ -341,6 +345,12 @@ class TabVM {
         break;
       case "数据库":
         Navigator.pushNamed(context, "/more_sqflite");
+        break;
+      case "compute":
+        Navigator.pushNamed(context, "/more_compute");
+        break;
+      case "isolate":
+        Navigator.pushNamed(context, "/more_isolate");
         break;
       default:
         print("Others");
