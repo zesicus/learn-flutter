@@ -13,7 +13,6 @@ class Entrance extends StatefulWidget {
 }
 
 class _EntranceState extends State<Entrance> {
-  
   int currentTabIndex;
   _EntranceState(this.currentTabIndex);
   // 所有 tab 页
@@ -22,10 +21,16 @@ class _EntranceState extends State<Entrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Learn Flutter"),
-        automaticallyImplyLeading: false, // 把 leading 的空间留给 title
-        flexibleSpace: Image.asset('res/images/sea_navi.jpg', fit: BoxFit.cover,),
+      appBar: PreferredSize(
+        child: AppBar(
+          title: Text("Learn Flutter"),
+          automaticallyImplyLeading: false, // 把 leading 的空间留给 title
+          flexibleSpace: Image.asset(
+            'res/images/sea_navi.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        preferredSize: Size.fromHeight(44),
       ),
       body: pages[currentTabIndex],
       bottomNavigationBar: BottomNavigationBar(
