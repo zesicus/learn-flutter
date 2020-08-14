@@ -25,7 +25,7 @@ class _WidgetNestedScrollPageState extends State<WidgetNestedScrollPage> {
           headerSliverBuilder: (context, innerScrolled) => <Widget>[
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-              child: SliverAppBar(
+              sliver: SliverAppBar(
                 title: Text("嵌套连结"),
                 centerTitle: true,
                 expandedHeight:
@@ -40,17 +40,19 @@ class _WidgetNestedScrollPageState extends State<WidgetNestedScrollPage> {
                       fit: BoxFit.cover),
                 ),
                 bottom: TabBar(
-                  tabs: _tabs
-                      .map((name) => Tab(text: name))
-                      .toList(),
+                  tabs: _tabs.map((name) => Tab(text: name)).toList(),
                 ),
               ),
             )
           ],
           body: TabBarView(
             children: <Widget>[
-              Center(child: Text('页面 1', style: TextStyle(fontSize: 30)),),
-              Center(child: Text('页面 2', style: TextStyle(fontSize: 30)),),
+              Center(
+                child: Text('页面 1', style: TextStyle(fontSize: 30)),
+              ),
+              Center(
+                child: Text('页面 2', style: TextStyle(fontSize: 30)),
+              ),
             ],
           ),
         ),
